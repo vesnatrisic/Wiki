@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE>
+<html>
     <head>
-        <title>Django</title>
+        <title>Create new page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
@@ -15,21 +15,31 @@
             </form>
         <nav>
         <p><a href= "{% url 'index' %}">Home</a></p>
-        <p><a href="https://www.w3schools.com">Create New Page</a></p>
+        <p><a href= "{% url 'createNewPage' %}">Create New Page</a></p>
         <p><a href="https://www.w3schools.com">Random Page</a></p>
         </nav>
             
         </div>
-        
         <!-- Page Content -->
         <div style="margin-left:25%">
         
-        <div class="w3-container w3-teal">
-            <h1>Django</h1>
-            
-        </div>
-            <p>Django is a high-level Python web framework that enables rapid development of secure and maintainable websites.</p>
-        <div class="w3-container">
+            <div class="w3-container w3-teal">
+                <h1>Create new page</h1>
+                
+            </div>
+        <p>Title:</p>
+        <form action="/action_page.php">
+            <textarea name="message" rows="1" cols="100"></textarea>
+            <br><br>
+          </form>
+          
+          <p>Content:</p>      
+          <form action="/action_page.php">
+            <textarea name="message" rows="10" cols="100"></textarea>
+            <br><br>
+            <input type="submit">
+          </form>
+          <div class="w3-container">
         
         
         </div>

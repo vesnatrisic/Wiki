@@ -8,5 +8,6 @@ urlpatterns = [
     path ("Django", views.django, name="django"),
     path ("GIT", views.git, name="git"),
     path ("HTML", views.html, name="html"),
-    path ("latestNews", views.latestNews, name="latestNews")
+    path ("latestNews", views.latestNews, name="latestNews"),
+    path ("createNewPage", views.createNewPage, name="createNewPage")
 ]

@@ -23,4 +23,7 @@ def html(request):
 def latestNews(request):
     return render (request, "hello/latestNews.html")
 
+def createNewPage(request):
+    return render (request, "hello/createNewPage.html")
+
 
