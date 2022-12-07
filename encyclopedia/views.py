@@ -32,10 +32,10 @@ def entry_page(request, title):
 def search(request):
     query = request.GET['q']
     if util.get_entry(query):
-        # query matches a title
+        # Query se poklapa sa title
         return HttpResponseRedirect(reverse("entry", args=(query,)))
     else:
-        # query does not match!
+        # Query se ne poklapa!
         return render(request, "encyclopedia/index.html", {
             "entries": [entry for entry in util.list_entries() if query.lower() in entry.lower()],
             "title": f'"{query}" search results',
@@ -58,7 +58,7 @@ def save_page(request, title=None):
         assert (request.method == 'POST')
         entry_content = request.POST['entry-content']
         if not title:
-            # We are saving a new page
+            # Sacuvavamo new page
             title = request.POST['title']
             if title.lower() in [entry.lower() for entry in util.list_entries()]:
                 return render(request, "encyclopedia/error.html", {
@@ -75,7 +75,7 @@ def save_page(request, title=None):
 def edit_page(request, title):
     entry_contents = util.get_entry(title)
     if entry_contents is None:
-        # Somebody came to a url for editing a  page that does not exist
+        # URL za editovanje stranice koja ne postoji
         return HttpResponseRedirect(reverse("index"))
 
     return render(request, "encyclopedia/new-page.html", {
